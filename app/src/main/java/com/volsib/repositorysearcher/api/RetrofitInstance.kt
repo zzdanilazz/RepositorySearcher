@@ -1,6 +1,5 @@
 package com.volsib.repositorysearcher.api
 
-import com.volsib.repositorysearcher.util.Constants
 import com.volsib.repositorysearcher.util.Constants.Companion.BASE_URL
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -34,7 +33,6 @@ class RetrofitInstance {
                 val request =
                     chain.request().newBuilder()
                         .header("Accept", "application/vnd.github+json")
-                        .header("Authorization", "Bearer ${Constants.API_KEY}")
                         .header("X-GitHub-Api-Version", "2022-11-28")
                         .build()
                 chain.proceed(request)
